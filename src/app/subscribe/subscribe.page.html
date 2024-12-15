@@ -1,0 +1,279 @@
+<ion-header [translucent]="true"  class="ion-no-border">
+  <ion-toolbar style="--background: #AB95F9; ">
+    <ion-title style="color: white; font-weight: bold;">LOGO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+  <ion-grid [fixed]="true">
+    <ion-row style="margin-top: 20px;">
+
+      <!-- Information for contact and child-->
+      <ion-col size="12" sizeMd="6"  id="container1">
+          <ion-grid>
+            <ion-row>
+              <!--Title of Subscription page-->
+              <ion-col size="12">
+                <span class="header1">
+                  Subscribe
+                </span>
+              </ion-col>
+              <ion-col size="12">
+                <span class="tags">
+                  to our Monthly Surprise Box
+                </span>
+              </ion-col>
+              <ion-col size="12">
+                <div class="line"></div>
+              </ion-col>
+        
+              <!--Contact's information-->
+              <ion-col size="12">
+                <span class="header1">
+                  Contact Information
+                </span>
+              </ion-col>
+              <ion-col size="12">
+                <span class="tags">
+                  Your Name
+                </span>
+              </ion-col>
+              <ion-col size="12">
+                <ion-input style="--border-radius: 10px;" placeholder="e.g Osama Alshathri" fill="outline"></ion-input>
+              </ion-col>
+              <ion-col size="12">
+                <span class="tags">
+                  Email
+                </span>
+              </ion-col>
+              <ion-col size="12">
+                <ion-input style="--border-radius: 10px;" placeholder="Osama@gmail.com" fill="outline"></ion-input>
+              </ion-col>
+        
+              <!--Childs information-->
+              <ion-col size="12">
+                <br>
+                <span class="header1">
+                  Child’s Information
+                </span>
+              </ion-col>
+              <ion-col size="12">
+                <span class="tags">
+                  Child’s Full Name
+                </span>
+              </ion-col>
+              <ion-col size="12">
+                <ion-input style="--border-radius: 10px;" placeholder="e.g Sarah Mohammad" fill="outline"></ion-input>
+              </ion-col>
+        
+        
+              <!--Date of Birth section-->
+              <ion-col size="12">
+                <span class="tags">
+                  Child’s Date of Birth
+                </span>
+              </ion-col>
+              <ion-col size="4">
+                <div  (onclick)="setDay(5)" id="Day-popover" style="width: 100%; padding-left: 5px; padding-right: 5px;padding-top: 15px;padding-bottom: 15px;border-style: solid;display: inline-block;border-radius: 10px;border-width: 0.4px; border-color: grey;">
+                  <div style="color: grey;font-size: small;float: left;">{{choosenDay==0?"Day":choosenDay}}</div>
+                    <ion-icon name="chevron-down-outline" slot="end" style="font-size: small;float: right;"></ion-icon>
+                </div>
+        
+                <ion-popover trigger="Day-popover" [dismissOnSelect]="true">
+                  <ng-template>
+                    <ion-content>
+                      <ion-list>
+                        <ion-item [button]="true" *ngFor="let day of days" [detail]="false" (click)="setDay(day)">{{day}}</ion-item>
+                      </ion-list>
+                    </ion-content>
+                  </ng-template>
+                </ion-popover>
+              </ion-col>
+        
+              <ion-col size="4">
+                <div id="Month-popover" style="width: 100%; padding-left: 5px; padding-right: 5px;padding-top: 15px;padding-bottom: 15px;border-style: solid;display: inline-block;border-radius: 10px;border-width: 0.4px; border-color: grey;">
+                  <div style="color: grey;font-size: small;float: left;">{{choosenMonth==""?"Month":choosenMonth}}</div>
+                    <ion-icon name="chevron-down-outline" slot="end" style="font-size: small;float: right;"></ion-icon>
+                </div>
+        
+                <ion-popover trigger="Month-popover" [dismissOnSelect]="true">
+                  <ng-template>
+                    <ion-content>
+                      <ion-list>
+                        <ion-item [button]="true" (click)="setMonth(month)" *ngFor="let month of months" [detail]="false">{{month}}</ion-item>
+                      </ion-list>
+                    </ion-content>
+                  </ng-template>
+                </ion-popover>
+        
+              </ion-col>
+        
+        
+              <ion-col size="4">
+                <div id="Year-popover" style="width: 100%; padding-left: 5px; padding-right: 5px;padding-top: 15px;padding-bottom: 15px;border-style: solid;display: inline-block;border-radius: 10px;border-width: 0.4px; border-color: grey;">
+                  <div style="color: grey;font-size: small;float: left;">{{choosenYear==null?"Year":choosenYear}}</div>
+                    <ion-icon name="chevron-down-outline" slot="end" style="font-size: small;float: right;"></ion-icon>
+                </div>
+        
+                <ion-popover trigger="Year-popover" [dismissOnSelect]="true">
+                  <ng-template>
+                    <ion-content>
+                      <ion-list>
+                        <ion-item [button]="true" *ngFor="let year of years" [detail]="false" (click)="setYear(year)">{{year}}</ion-item>
+                      </ion-list>
+                    </ion-content>
+                  </ng-template>
+                </ion-popover>
+              </ion-col>
+              
+              <ion-col size="12">
+                <span class="tags">
+                  Grade
+                </span>
+              </ion-col>
+              <ion-col size="12">
+                <ion-input style="--border-radius: 10px;" placeholder="e.g Grade 2" fill="outline"></ion-input>
+              </ion-col>
+        
+              <ion-col size="12">
+                <span class="tags">
+                  Gender
+                </span>
+              </ion-col>
+              <ion-col size="6">
+                <div (click)="selectGender('boy')" style="width: 100%; padding-left: 5px; padding-right: 5px;padding-top: 15px;padding-bottom: 15px;border-style: solid;display: inline-block;border-radius: 10px;border-width: 0.4px; border-color: grey;">
+                  <div style="color: grey;font-size: small;float: left;">Boy</div>
+                    <ion-icon name="checkmark-circle-outline" slot="end" style="float: right;" [color]="gender=='boy'?'primary':'medium' " ></ion-icon>
+                </div>
+        
+              </ion-col>
+        
+              <ion-col size="6">
+                <div  (click)="selectGender('girl')" style="width: 100%; padding-left: 5px; padding-right: 5px;padding-top: 15px;padding-bottom: 15px;border-style: solid;display: inline-block;border-radius: 10px;border-width: 0.4px; border-color: grey;">
+                  <div style="color: grey;font-size: small;float: left;">Girl</div>
+                    <ion-icon  name="checkmark-circle-outline" slot="end" style="float: right;" [color]="gender=='girl'?'primary':'medium' "></ion-icon>
+                </div>
+        
+              </ion-col>
+        
+              <ion-col size="12">
+                <br>
+                <span class="header1">
+                  As a parent select any 3 topics
+                </span>
+              </ion-col>
+              <ion-col>
+                <div class="custom-topics">
+                  <div *ngFor="let topic of topics" [class]="topic.selected" (click)="selectTopic(topic.topicName)">{{topic.topicName}}</div>
+                </div>
+              </ion-col>
+        
+        
+            </ion-row>
+          </ion-grid>
+      </ion-col>
+
+      <!--Summary and continue payment-->
+      <ion-col size="12" sizeMd="6"  id="container2">
+        <div  style="height: 100%;">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12">
+                <br>
+                <span class="header1">
+                  Summary
+                </span>
+              </ion-col>
+              <ion-col size="12">
+                <span class="tags">
+                  of your Monthly Surprise Box
+                </span>
+              </ion-col>
+              <ion-col size="12">
+                <div style="background-color: white;width: 100%;padding: 30px; border-radius: 5px;">
+                  <div style="width: 100%;">
+                    <div style="float: left;">
+                      Mystery Box
+                    </div>
+                    <div style="float: right;">
+                      SAR <b>456</b>
+                    </div>
+                  </div>
+                  <br>
+                  <div style="width: 100%;">
+                    <div style="float: left; color: grey;font-size: x-small;">
+                      X 1
+                    </div>
+                    <div style="float: right; color: grey;font-size: x-small;">
+                      Monthly
+                    </div>
+                  </div>
+                  <br>
+      
+                </div>
+                <div style="width: 100%;padding: 30px; border-radius: 5px;">
+                  <div style="width: 100%;padding-bottom: 20px;">
+                    <div style="float: left;">
+                      Subtotal
+                    </div>
+                    <div style="float: right;">
+                      SAR <b>456</b>
+                    </div>
+                  </div>
+                  <br>
+      
+                  <div style="width: 100%;padding-bottom: 20px;">
+                    <div style="float: left;">
+                      Shipping
+                    </div>
+                    <div style="float: right;color: grey;font-size: small;">
+                      Free
+                    </div>
+                  </div>
+      
+                  <br>
+      
+                  
+                  <div style="width: 100%;padding-bottom: 20px;">
+                    <div style="float: left;">
+                      Taxes
+                    </div>
+                    <div style="float: right;">
+                      SAR <b>4.0</b>
+                    </div>
+                  </div>
+      
+                  <br>
+      
+                  <div class="line"></div>
+      
+                  <div style="width: 100%;padding-bottom: 20px;padding-top: 20px;">
+                    <div style="float: left;font-size: large;font-weight: bold;">
+                      Total
+                    </div>
+                    <div style="float: right;font-size: large;">
+                      SAR <b>460</b>
+                    </div>
+                  </div>
+      
+                </div>
+              </ion-col>
+              <ion-col size="12">
+                <ion-button (click)="continue()" expand="block" style="width: 90%;">
+                  <span style="font-weight: 900;">
+                    Continue to payment
+                  </span>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+            </div>  
+      </ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+</div>
+
+</ion-content>

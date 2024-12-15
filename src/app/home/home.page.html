@@ -1,20 +1,227 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!-- Section 1 the introduction-->
+  <div id="container1">
+    <ion-grid fixed>
+      <ion-row class="ion-justify-content-start">
+        <ion-col size="12">
+          <div
+            style="width: 100%;text-align: start ;font-weight:700;font-size: 30px;padding: 10px;padding-bottom: 30px;">
+            Logo
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="0" sizeMd="3"></ion-col>
+        <ion-col size="12" sizeMd="6">
+          <div id="title1">
+            <strong> Discover the magic of our surprise box</strong>
+          </div>
+        </ion-col>
+        <ion-col size="0" sizeMd="3"></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="0" sizeMd="3"></ion-col>
+        <ion-col  size="12" sizeMd="6">
+          <div id="title2">
+            <p>
+              Unleash your child's curiosity with our educational subscription box filled with fun and learning.
+            </p>
+          </div>
+        </ion-col>
+        <ion-col size="0" sizeMd="3"></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-button (click)="gotoSubscribe()">
+            <span style="font-weight: 900;">
+              Subscribe Now
+            </span>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="0" sizeMd="1">
+          
+        </ion-col>
+        <ion-col size="12" sizeMd="10">
+          <img src="assets/test.png" />
+        </ion-col>
+        <ion-col size="0" sizeMd="1">
+          
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
+
+  <!-- Section 2  Subscription steps-->
+  <div id="container2">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          Discover
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="0" sizeMd="3"></ion-col>
+        <ion-col size="12" sizeMd="6">
+          <span style="font-size: 32px;font-weight: 550;">
+            How It Works: Subscribe and Receive Your Surprise Box
+          </span>
+        </ion-col>
+        <ion-col size="0" sizeMd="3"></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="0" sizeMd="3"></ion-col>
+        <ion-col size="12" sizeMd="6">
+          <div id="title3">
+            Subscribe to our surprise subscription box and give your child the gift of learning. Each month, we curate a
+            box filled with educational materials tailored to your child's age and interests.
+          </div>
+        </ion-col>
+        <ion-col size="0" sizeMd="3"></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" sizeMd="4">
+          <app-steps picSrc="assets/step1.png" title="Step 1: Subscribe"
+          description="Select a subscription plan that suits your child's learning needs and preferences.">
+        </app-steps>
+        </ion-col>
+
+        <ion-col size="12" sizeMd="4">
+          <app-steps picSrc="assets/step2.png" title="Step 2: Personalise Your Box"
+          description="Tell us about your child's age, interests, and learning goals, and we'll customize their surprise box accordingly.">
+        </app-steps>
+        </ion-col>
+
+        <ion-col size="12" sizeMd="4">
+          <app-steps picSrc="assets/step3.png" title="Step 3: Receive Your Surprise Box"
+          description="Sit back and relax as your child eagerly awaits the arrival of their monthly surprise box filled with engaging learning materials.">
+        </app-steps>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12" style="margin-bottom: 40px;">
+          <ion-button (click)="gotoSubscribe()">
+            <span style="font-weight: 900;">
+              Subscribe Now
+            </span>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+
+
+    <!-- Section 4 fast subscribe and footer-->
+  <div>
+    <ion-grid>
+      <ion-row class="ion-justify-content-start ion-hide-md-up">
+        <ion-col size="12">
+          <div
+            style="width: 100%;text-align: start ;font-weight:700;font-size: 30px;padding: 10px;">
+            Logo
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-hide-md-up">
+        <ion-col size="12">
+          <p style="font-size: 20px;margin-left: 10px;">
+            Link one
+          </p>
+          <p style="font-size: 20px;margin-left: 10px;">
+            Link two
+          </p>
+          <p style="font-size: 20px;margin-left: 10px;">
+            Link three
+          </p>
+          <p style="font-size: 20px;margin-left: 10px;">
+            Link four
+          </p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-hide-md-up">
+        <ion-col size="12">
+          <p style="font-size: 25px;margin-left: 10px;margin-top: 30px;">
+            Subscribe
+          </p>
+          <ion-input type="text" placeholder="Enter your email" style="border-style: solid;--padding-bottom: 15px;--padding-top: 15px;--padding-start: 10px;--padding-end: 10px;"></ion-input>
+          <br>
+          <ion-input type="text" placeholder="Enter your email" style="border-style: solid;--padding-bottom: 15px;--padding-top: 15px;--padding-start: 10px;--padding-end: 10px;"></ion-input>
+          
+          <p style="font-size: small;">
+            By subscribing you agree to with our <span style="text-decoration: underline;">Privacy Policy</span>
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <br><br>
+          <div class="line">
+            <br>
+
+            <!--Footer section-->
+            <ion-grid >
+              <ion-row  class="ion-hide-md-down">
+                <ion-col size="6" style="text-align: left;" >
+                  <span style="text-decoration: underline;font-size: small;">
+                    Privacy Policy
+                  </span>
+                  &nbsp;  &nbsp;
+                  <span style="text-decoration: underline;font-size: small;">
+                    Terms of Service
+                  </span>
+                  &nbsp;  &nbsp;
+                  <span style="text-decoration: underline;font-size: small;">
+                    Cookies Settings
+                  </span>
+                </ion-col>
+                <ion-col size="6" style="text-align: right;">
+                
+                  <span style="text-decoration: underline;font-size: small;">
+                    © 2023 MyEdu. All rights reserved.
+                  </span>
+                </ion-col>
+              </ion-row>
+
+              <ion-row class="ion-hide-md-up">
+                <ion-col size="12">
+                  <span style="text-decoration: underline;font-size: small;">
+                    Privacy Policy
+                  </span>
+                </ion-col>
+                <ion-col size="12">
+                  <span style="text-decoration: underline;font-size: small;">
+                    Terms of Service
+                  </span>
+                </ion-col>
+                <ion-col size="12">
+                  <span style="text-decoration: underline;font-size: small;">
+                    Cookies Settings
+                  </span>
+                </ion-col>
+                <ion-col size="12">
+                  
+                </ion-col>
+                <ion-col size="12">
+                
+                  <span style="text-decoration: underline;font-size: small;">
+                    © 2023 MyEdu. All rights reserved.
+                  </span>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <br>
+            <br>
+          </div>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+
 </ion-content>
